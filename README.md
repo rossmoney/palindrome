@@ -1,19 +1,16 @@
-Palindrome
+##Palindrome
 
 Instructions to Run
 ----------------------------------------------------------------
 
-composer install
-
-symfony server:start
+- composer install
+- symfony server:start
 
 Time
 ----------------------------------------------------------------
-1 hour 30mins: frontend and routing / reading symfony docs
-
-1 hour: testing checker algorithms
-
-30 mins: commenting code and writing docs
+- 1 hour 30mins: frontend and routing / reading symfony docs
+- 1 hour: testing checker algorithms
+- 30 mins: commenting code and writing docs
 
 Improvements
 ----------------------------------------------------------------
