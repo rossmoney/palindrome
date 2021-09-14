@@ -1,4 +1,4 @@
-##Palindrome
+Palindrome
 
 Instructions to Run
 ----------------------------------------------------------------
