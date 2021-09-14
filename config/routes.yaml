@@ -1,0 +1,9 @@
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+    methods:    GET
+  
+check_word:
+    path: /
+    controller: App\Controller\HomeController::checkWord
+    methods:    POST

@@ -1,0 +1,45 @@
+{# templates/home/index.html.twig #}
+{% extends "base.html.twig" %}
+
+{% block title %}Palindrome{% endblock %}
+
+{% block body %}
+    <h1>Palindrome</h1>
+
+    <div class="container">
+
+        {# read and display all flash messages #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-danger mb-3" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="row">
+            <div class="col-6">
+                <form method="post" action="/">
+                    <div class="mb-3">
+                        <label class="form-label">Input (word / sentence)</label>
+                        <input type="text" class="form-control" name="word" value="{{ word ?? '' }}" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Enter a Comparison (for Anagram)</label>
+                        <input type="text" class="form-control" name="comparison" value="{{ comparison ?? '' }}" />
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" disabled name="output">
+Is Palindrome: {{ isPalindrome }}
+Is Anagram: {{ isAnagram }}
+Is Pangram: {{ isPangram }}
+                        </textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" >Check</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
