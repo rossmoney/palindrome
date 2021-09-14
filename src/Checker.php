@@ -19,6 +19,7 @@ class Checker
      */
     public function isPalindrome(string $word) : bool
     {
+        //Check the word with the word reversed
         return $word == strrev($word);
     }
     
@@ -33,12 +34,15 @@ class Checker
      */
     public function isAnagram(string $word, string $comparison) : bool
     {
+        //Make both strings lowercase for comparison, remove any spaces and convert to array of characters
         $word = str_split(preg_replace("/\s+/", "", strtolower($word)));
+        //Sort array into alphabetical order
         sort($word); 
 
         $comparison = str_split(preg_replace("/\s+/", "", strtolower($comparison)));
         sort($comparison); 
 
+        //Turn both arrays back into strings and compare the strings to make sure they are equal (both words and phrases use the same characters)
         return implode("", $word) == implode("", $comparison);
     }
 
@@ -51,19 +55,22 @@ class Checker
      */    
     public function isPangram(string $phrase) : bool
     {
+        //Define array with all available letters, str_split converts to array
         $alphabet = str_split('abcdefghijklmnopqrstuvwxyz');
+
+        //Initialize counter variables
         $uniqueLetters = 0;
         $seenLetters = [];
 
-        foreach(str_split(strtolower($phrase)) as $letter)
+        foreach(str_split(strtolower($phrase)) as $letter) //Convert phrase to lower case and then split into characters
         {
-            if (in_array($letter, $alphabet) && !in_array($letter, $seenLetters))
+            if (in_array($letter, $alphabet) && !in_array($letter, $seenLetters)) //If letter is in the alphabet and hasn't been seen already
             {
-                $uniqueLetters++;
-                $seenLetters[] = $letter;
+                $uniqueLetters++; //Increment count of letters that have been seen
+                $seenLetters[] = $letter; //Add to list of letters seen already
             }
         }
 
-        return ($uniqueLetters == 26);
+        return ($uniqueLetters == 26); //Letters seen must equal exactly 26 (all letters of alphabet)
     }
 }

@@ -1,2 +1,3 @@
-1 hour 15mins: frontend and routing
-45mins: testing checker algorithms
+1 hour 30mins: frontend and routing / reading symfony docs
+1 hour: testing checker algorithms
+30 mins: commenting code and writing docs
